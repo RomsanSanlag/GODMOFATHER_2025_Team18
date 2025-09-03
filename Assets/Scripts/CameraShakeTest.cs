@@ -5,13 +5,13 @@ using Random = UnityEngine.Random;
 
 public class CameraShake : MonoBehaviour
 {
-    public bool cameraShakeEnabled = true; // Toggle d'accessibilité
-
+    [SerializeField] private GameManager _gm;
+    
     private Vector3 originalPos;
 
     void Awake()
     {
-        originalPos = transform.localPosition; // Sauvegarde la position d'origine
+        originalPos = transform.localPosition; // Save origin pos
     }
 
     void Start()
@@ -21,8 +21,8 @@ public class CameraShake : MonoBehaviour
     
     public void Shake(float intensity = 0.2f, float duration = 0.3f)
     {
-        if (!cameraShakeEnabled) return;
-        StopAllCoroutines(); // stop si un shake est déjà en cours
+        if (!_gm.isSreenShakeEnable) return;
+        StopAllCoroutines(); // if already exist kill it
         StartCoroutine(ShakeRoutine(intensity, duration));
     }
 
@@ -41,6 +41,6 @@ public class CameraShake : MonoBehaviour
             yield return null;
         }
 
-        transform.localPosition = originalPos; // Remet la caméra à sa position initiale
+        transform.localPosition = originalPos; // place back the cam to orign 
     }
 }
