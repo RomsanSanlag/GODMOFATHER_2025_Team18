@@ -49,6 +49,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void Onpickup(InputValue value)
+    {
+        
+    }
+
     void FixedUpdate()
     {
         rb.linearVelocity = canMove ? moveInput * moveSpeed : Vector2.zero;

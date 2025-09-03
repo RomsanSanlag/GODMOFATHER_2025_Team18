@@ -23,6 +23,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "pickup",
+                    "type": "Button",
+                    "id": "b9ca803d-0708-4d63-a2aa-7f5da70352ce",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -91,6 +100,17 @@
                     "action": "attack",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c4a90dc0-a292-4034-979e-658452dc3cc3",
+                    "path": "<Keyboard>/rightCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "pickup",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -115,6 +135,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "pickup",
+                    "type": "Button",
+                    "id": "5d84a2f7-a965-45a4-bf42-273afbd0f203",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -132,7 +161,7 @@
                 {
                     "name": "up",
                     "id": "f379b5f3-6a57-4dbe-b606-d2bd79cac232",
-                    "path": "<Keyboard>/i",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -143,7 +172,7 @@
                 {
                     "name": "down",
                     "id": "d6835a49-41b2-4b80-b884-4518ce28179b",
-                    "path": "<Keyboard>/k",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -154,7 +183,7 @@
                 {
                     "name": "left",
                     "id": "22e7801f-1600-401e-8016-d5895e7c6087",
-                    "path": "<Keyboard>/j",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -165,7 +194,7 @@
                 {
                     "name": "right",
                     "id": "3ffc6d7c-713a-41e4-9076-eff44ca83023",
-                    "path": "<Keyboard>/l",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -176,11 +205,22 @@
                 {
                     "name": "",
                     "id": "dc2df4d1-ed1f-4055-b265-27a2bbcf8fff",
-                    "path": "<Keyboard>/enter",
+                    "path": "<Keyboard>/rightShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "811ee5a7-6f6d-453a-8ad7-f5d7bc3827b7",
+                    "path": "<Keyboard>/rightCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "pickup",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
