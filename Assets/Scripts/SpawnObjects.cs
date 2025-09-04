@@ -31,6 +31,8 @@ public class SpawnObjects : MonoBehaviour
 
     void Update()
     {
+        #region Timers
+
         // B Tier
         _timerBTier += Time.deltaTime;
         
@@ -60,6 +62,8 @@ public class SpawnObjects : MonoBehaviour
             _timerSTier = 0f;
         }
         //
+
+        #endregion
     }
 
     private void SpawnObjectSTier()
@@ -69,7 +73,7 @@ public class SpawnObjects : MonoBehaviour
         GameObject prefab = _STierObjects[Random.Range(0, _STierObjects.Count)];
 
         // angle radius clamp π → 2π
-        float angle = Random.Range(Mathf.PI + _angleOffset, Mathf.PI * 2 - _angleOffset);
+        float angle = Random.Range(Mathf.PI / 2 + _angleOffset, 3 * Mathf.PI / 2 - _angleOffset);
 
         // 2D position
         Vector2 pos = new Vector2(
@@ -87,14 +91,14 @@ public class SpawnObjects : MonoBehaviour
         GameObject prefab = _ATierObjects[Random.Range(0, _ATierObjects.Count)];
 
         // angle radius clamp π → 2π
-        float angle = Random.Range(Mathf.PI + _angleOffset, Mathf.PI * 2 - _angleOffset);
-
+        float angle = Random.Range(Mathf.PI / 2 + _angleOffset, 3 * Mathf.PI / 2 - _angleOffset);
+        
         // 2D position
         Vector2 pos = new Vector2(
             _center.position.x + Mathf.Cos(angle) * _radiusA,
             _center.position.y + Mathf.Sin(angle) * _radiusA
         );
-        
+
         Instantiate(prefab, pos, Quaternion.identity);
     }
 
@@ -105,8 +109,8 @@ public class SpawnObjects : MonoBehaviour
         GameObject prefab = _BTierObjects[Random.Range(0, _BTierObjects.Count)];
 
         // angle radius clamp π → 2π
-        float angle = Random.Range(Mathf.PI + _angleOffset, Mathf.PI * 2 - _angleOffset);
-
+        float angle = Random.Range(Mathf.PI / 2 + _angleOffset, 3 * Mathf.PI / 2 - _angleOffset);
+        
         // 2D position
         Vector2 pos = new Vector2(
             _center.position.x + Mathf.Cos(angle) * _radiusB,
