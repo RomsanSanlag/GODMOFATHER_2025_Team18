@@ -147,6 +147,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 v = canMove ? moveInput * moveSpeed : Vector2.zero;
         rb.linearVelocity = v;
+        float speed = rb.linearVelocity.magnitude;
 
         if (v.sqrMagnitude > 0.0001f)
         {
@@ -170,11 +171,10 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool(idIsStun, false);
                 animator.SetBool(idIsCarrying, true);
                 animator.SetFloat(idBlend, 0f);
-                animator.SetFloat(idAnimMoveSpeed, 0f);
+                animator.SetFloat(idAnimMoveSpeed, speed);
             }
             else
             {
-                float speed = rb.linearVelocity.magnitude;
                 animator.SetBool(idIsStun, false);
                 animator.SetBool(idIsCarrying, false);
                 animator.SetFloat(idAnimMoveSpeed, speed);
