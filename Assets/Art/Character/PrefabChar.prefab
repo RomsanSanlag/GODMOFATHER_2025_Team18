@@ -990,6 +990,7 @@ GameObject:
   - component: {fileID: 1155985027598262279}
   - component: {fileID: 7925438056776817338}
   - component: {fileID: 4059062658595822318}
+  - component: {fileID: -3638316543481028237}
   m_Layer: 3
   m_Name: PrefabChar
   m_TagString: Untagged
@@ -1231,6 +1232,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.14473307, y: 0.1523509}
   m_Size: {x: 2.2340405, y: 2.675858}
   m_Direction: 0
+--- !u!114 &-3638316543481028237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6751761116194304121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03164854f7ff3a445af95cc03a5d08c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAppearanceSwitcher
 --- !u!1 &6835421405840513872
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,6 +1471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5562479253809623671}
   - component: {fileID: 5346738550538541734}
+  - component: {fileID: 964044080580894914}
   m_Layer: 3
   m_Name: rameP1
   m_TagString: Untagged
@@ -1538,6 +1552,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &964044080580894914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7294387610153552641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d494bf886f883247b76c298ef52e555, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RameP1Tag
 --- !u!1 &7322856598661745603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,6 +1770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3042631129990385327}
   - component: {fileID: 3257059932811941546}
+  - component: {fileID: 5045797730883845071}
   m_Layer: 3
   m_Name: rameP2
   m_TagString: Untagged
@@ -1824,6 +1851,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5045797730883845071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7630258977517386141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee7831ce66abeaa4082fce9819919f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RameP2Tag
 --- !u!1 &8555967689293144681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,6 +1873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8946964065986641329}
   - component: {fileID: 3046222480235544319}
+  - component: {fileID: 2310833719464348750}
   m_Layer: 3
   m_Name: bodyP2
   m_TagString: Untagged
@@ -1914,6 +1954,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2310833719464348750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8555967689293144681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 866736cf04d3a0149bc9116fbad3aed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BodyP2Tag
 --- !u!1 &8840648382856205946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1924,6 +1976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6138497532812011088}
   - component: {fileID: 6467580368710848016}
+  - component: {fileID: 2488483224659469792}
   m_Layer: 3
   m_Name: bodyP1
   m_TagString: Untagged
@@ -2004,3 +2057,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2488483224659469792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8840648382856205946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702357da28ce7fb489f952aa3b609b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BodyP1Tag
