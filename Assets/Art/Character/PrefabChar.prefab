@@ -990,6 +990,7 @@ GameObject:
   - component: {fileID: 1155985027598262279}
   - component: {fileID: 7925438056776817338}
   - component: {fileID: 4059062658595822318}
+  - component: {fileID: -3359271056424376660}
   m_Layer: 3
   m_Name: PrefabChar
   m_TagString: Untagged
@@ -1231,6 +1232,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.14473307, y: 0.1523509}
   m_Size: {x: 2.2340405, y: 2.675858}
   m_Direction: 0
+--- !u!114 &-3359271056424376660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6751761116194304121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03164854f7ff3a445af95cc03a5d08c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAppearanceSwitcher
+  bodyP1: {fileID: 8840648382856205946}
+  bodyP2: {fileID: 8555967689293144681}
+  rameP1: {fileID: 7294387610153552641}
+  rameP2: {fileID: 7630258977517386141}
 --- !u!1 &6835421405840513872
 GameObject:
   m_ObjectHideFlags: 0
