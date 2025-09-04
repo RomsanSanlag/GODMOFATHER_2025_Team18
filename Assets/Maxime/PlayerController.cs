@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float stunDuration = 1f;
     [SerializeField] private float attackCooldown = 1f;
     [SerializeField] private LayerMask hittableMask;
+	[SerializeField] private Animator _animator;
 
     [SerializeField] private LayerMask pickupMask;
     [SerializeField] private float carrySpeedMultiplier = 0.5f;
@@ -61,6 +62,8 @@ public class PlayerController : MonoBehaviour
         if (isStunned) return;
         if (Time.time < nextAttackTime) return;
         nextAttackTime = Time.time + attackCooldown;
+		
+		_animator.SetTrigger("IsHitting");
 
         Vector2 origin = rb.position + facing * attackRange;
         var hits = Physics2D.OverlapCircleAll(origin, attackRadius, hittableMask);
@@ -115,6 +118,15 @@ public class PlayerController : MonoBehaviour
     {
         rb.linearVelocity = canMove ? moveInput * moveSpeed : Vector2.zero;
         if (carryAnchor != null) carryAnchor.localPosition = (Vector3)(facing.normalized * 0.7f);
+		if (isCarrying = true) {
+			_animator.SetBool("IsCarrying", true);
+		} else {
+			_animator.SetBool("IsCarrying", false);
+		}
+		if (isStunned = true) {
+			
+			_animator.SetBool("IsStun", true);
+		}
     }
 
     public void SetStun(bool value)
