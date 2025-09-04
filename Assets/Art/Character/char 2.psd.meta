@@ -224,10 +224,10 @@ TextureImporter:
       name: char 2_4
       rect:
         serializedVersion: 2
-        x: 309
-        y: 855
-        width: 189
-        height: 139
+        x: 284
+        y: 850
+        width: 235
+        height: 142
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,10 +356,10 @@ TextureImporter:
       name: char 2_10
       rect:
         serializedVersion: 2
-        x: 1163
-        y: 301
-        width: 434
-        height: 448
+        x: 934
+        y: 419
+        width: 706
+        height: 316
       alignment: 9
       pivot: {x: 0.22647558, y: 0.24942411}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -405,7 +405,7 @@ TextureImporter:
         width: 174
         height: 135
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -427,7 +427,7 @@ TextureImporter:
         width: 210
         height: 161
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -449,7 +449,7 @@ TextureImporter:
         width: 373
         height: 199
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -458,6 +458,28 @@ TextureImporter:
       bones: []
       spriteID: 042aa48a9dd4e594bad9213423f32e06
       internalID: -248058332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: char 2_15
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 99
+        width: 220
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c5bb5fac47c594480df32af7aecb87
+      internalID: -1672726595
       vertices: []
       indices: 
       edges: []
@@ -483,6 +505,7 @@ TextureImporter:
       char 2_12: -1580914515
       char 2_13: -45669770
       char 2_14: -248058332
+      char 2_15: -1672726595
       char 2_2: 1679180351457304915
       char 2_3: -6660816475915860868
       char 2_4: -4242134918305129367
