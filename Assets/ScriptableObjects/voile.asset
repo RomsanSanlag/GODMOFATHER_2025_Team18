@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 185e7ed5f4c790044bc3626596c2cdd4, type: 3}
+  m_Name: voile
+  m_EditorClassIdentifier: Assembly-CSharp::Objects
+  itemName: voile
+  value: 2
+  prefab: {fileID: 4959290229943882812, guid: 4f1c149efb106db45b277d927382e61b, type: 3}
+  index: 5
