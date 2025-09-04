@@ -17,6 +17,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float pickupRadius = 1.2f;
     [SerializeField] private Transform carryAnchor;
 
+    [SerializeField] private Animator animator;
+    [SerializeField] private float rotationOffset = 0f;
+
+    private int idBlend;
+    private int idAnimMoveSpeed;
+    private int idIsCarrying;
+    private int idIsHitting;
+    private int idIsStun;
+
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Vector2 facing = Vector2.right;
@@ -44,7 +53,20 @@ public class PlayerController : MonoBehaviour
             var go = new GameObject("CarryAnchor");
             carryAnchor = go.transform;
             carryAnchor.SetParent(transform);
-            carryAnchor.localPosition = Vector3.right * 0.7f;
+            carryAnchor.localPosition = (Vector3)(facing.normalized * 1.5f);
+        }
+        if (animator == null) animator = GetComponent<Animator>();
+        idBlend = Animator.StringToHash("Blend");
+        idAnimMoveSpeed = Animator.StringToHash("AnimMovespeed");
+        idIsCarrying = Animator.StringToHash("IsCarrying");
+        idIsHitting = Animator.StringToHash("IsHitting");
+        idIsStun = Animator.StringToHash("IsStun");
+        if (animator != null)
+        {
+            animator.SetBool(idIsCarrying, false);
+            animator.SetBool(idIsStun, false);
+            animator.SetFloat(idBlend, 0f);
+            animator.SetFloat(idAnimMoveSpeed, 0f);
         }
     }
 
@@ -61,6 +83,7 @@ public class PlayerController : MonoBehaviour
         if (isStunned) return;
         if (Time.time < nextAttackTime) return;
         nextAttackTime = Time.time + attackCooldown;
+        if (animator != null) animator.SetTrigger(idIsHitting);
 
         Vector2 origin = rb.position + facing * attackRange;
         var hits = Physics2D.OverlapCircleAll(origin, attackRadius, hittableMask);
@@ -75,6 +98,7 @@ public class PlayerController : MonoBehaviour
     void OnPickup(InputValue value)
     {
         if (!value.isPressed) return;
+        if (isStunned) return;
         if (isCarrying)
         {
             DropCarried();
@@ -109,12 +133,54 @@ public class PlayerController : MonoBehaviour
         isCarrying = true;
         canAttack = false;
         moveSpeed = baseMoveSpeed * carrySpeedMultiplier;
+
+        if (animator != null)
+        {
+            animator.SetBool(idIsCarrying, true);
+            animator.SetBool(idIsStun, false);
+            animator.SetFloat(idBlend, 0f);
+            animator.SetFloat(idAnimMoveSpeed, 0f);
+        }
     }
 
     void FixedUpdate()
     {
-        rb.linearVelocity = canMove ? moveInput * moveSpeed : Vector2.zero;
-        if (carryAnchor != null) carryAnchor.localPosition = (Vector3)(facing.normalized * 0.7f);
+        Vector2 v = canMove ? moveInput * moveSpeed : Vector2.zero;
+        rb.linearVelocity = v;
+
+        if (v.sqrMagnitude > 0.0001f)
+        {
+            float angle = Vector2.SignedAngle(Vector2.up, v.normalized) + rotationOffset;
+            rb.MoveRotation(angle);
+        }
+
+        if (carryAnchor != null) carryAnchor.localPosition = (Vector3)(facing.normalized * 1.5f);
+
+        if (animator != null)
+        {
+            if (isStunned)
+            {
+                animator.SetBool(idIsStun, true);
+                animator.SetBool(idIsCarrying, false);
+                animator.SetFloat(idBlend, 0f);
+                animator.SetFloat(idAnimMoveSpeed, 0f);
+            }
+            else if (isCarrying)
+            {
+                animator.SetBool(idIsStun, false);
+                animator.SetBool(idIsCarrying, true);
+                animator.SetFloat(idBlend, 0f);
+                animator.SetFloat(idAnimMoveSpeed, 0f);
+            }
+            else
+            {
+                float speed = rb.linearVelocity.magnitude;
+                animator.SetBool(idIsStun, false);
+                animator.SetBool(idIsCarrying, false);
+                animator.SetFloat(idAnimMoveSpeed, speed);
+                animator.SetFloat(idBlend, speed);
+            }
+        }
     }
 
     public void SetStun(bool value)
@@ -141,5 +207,6 @@ public class PlayerController : MonoBehaviour
         isCarrying = false;
         canAttack = true;
         moveSpeed = baseMoveSpeed;
+        if (animator != null) animator.SetBool(idIsCarrying, false);
     }
 }
