@@ -28,7 +28,6 @@ public class SpawnObjects : MonoBehaviour
     [Header("Angle of Spawning")]
     [Range(0f, Mathf.PI / 2f)]
     [SerializeField] float _angleOffset = 0.2f; // float to ajust angle for spawning
-
     void Update()
     {
         #region Timers
@@ -77,8 +76,8 @@ public class SpawnObjects : MonoBehaviour
 
         // 2D position
         Vector2 pos = new Vector2(
-            _center.position.x + Mathf.Cos(angle) * _radiusS,
-            _center.position.y + Mathf.Sin(angle) * _radiusS
+            _center.position.x + Mathf.Cos(angle) * _radiusS + Random.Range(-0.5f, 0.5f),
+            _center.position.y + Mathf.Sin(angle) * _radiusS + Random.Range(-0.5f, 0.5f)
         );
         
         Instantiate(prefab, pos, Quaternion.identity);
@@ -95,8 +94,8 @@ public class SpawnObjects : MonoBehaviour
         
         // 2D position
         Vector2 pos = new Vector2(
-            _center.position.x + Mathf.Cos(angle) * _radiusA,
-            _center.position.y + Mathf.Sin(angle) * _radiusA
+            _center.position.x + Mathf.Cos(angle) * _radiusA + Random.Range(-0.5f, 0.5f),
+            _center.position.y + Mathf.Sin(angle) * _radiusA + Random.Range(-0.5f, 0.5f)
         );
 
         Instantiate(prefab, pos, Quaternion.identity);
@@ -113,8 +112,8 @@ public class SpawnObjects : MonoBehaviour
         
         // 2D position
         Vector2 pos = new Vector2(
-            _center.position.x + Mathf.Cos(angle) * _radiusB,
-            _center.position.y + Mathf.Sin(angle) * _radiusB
+            _center.position.x + Mathf.Cos(angle) * _radiusB + Random.Range(-0.5f, 0.5f),
+            _center.position.y + Mathf.Sin(angle) * _radiusB + Random.Range(-0.5f, 0.5f)
         );
         
         Instantiate(prefab, pos, Quaternion.identity);

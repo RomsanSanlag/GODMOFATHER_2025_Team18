@@ -9,6 +9,9 @@ public class MainMenuFuncs : MonoBehaviour
     
     [SerializeField] GameObject _mainMenu;
     [SerializeField] GameObject _settingsMenu;
+    [SerializeField] GameObject _gameMenu;
+    
+    
     [SerializeField] Button _buttonScreenShake;
     bool _isMenuActive = true;
     
@@ -16,6 +19,7 @@ public class MainMenuFuncs : MonoBehaviour
     {
         _mainMenu.SetActive(false);
         _settingsMenu.SetActive(false);
+        _gameMenu.SetActive(true);
     }
 
     public void QuitGame()
