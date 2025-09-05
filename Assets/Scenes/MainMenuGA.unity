@@ -8940,10 +8940,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477831a0cb42d6b4aa2351ad8986cdfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Score
-  score1Text: {fileID: 999762256}
-  score2Text: {fileID: 1655796384}
-  score1braille: {fileID: 1290849452}
-  score2braille: {fileID: 732807109}
+  score1Text: {fileID: 1655796384}
+  score2Text: {fileID: 999762256}
+  score1braille: {fileID: 732807109}
+  score2braille: {fileID: 1290849452}
   race: {fileID: 290938072}
 --- !u!1 &2005051236
 GameObject:
