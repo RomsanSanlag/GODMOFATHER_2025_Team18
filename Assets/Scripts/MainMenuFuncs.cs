@@ -18,6 +18,7 @@ public class MainMenuFuncs : MonoBehaviour
     
     public CameraFollow cameraFollow;
     public SpawnObjects spawnObjects;
+    public Score score;
     
     
     [SerializeField] Button _buttonScreenShake;
@@ -78,6 +79,8 @@ public class MainMenuFuncs : MonoBehaviour
         
         _paddle1.SetActive(false);
         _paddle2.SetActive(false);
+        
+        score.printScore();
     }
 
     public void RestartGame()
