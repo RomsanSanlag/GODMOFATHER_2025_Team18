@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: voile_dechire
   m_EditorClassIdentifier: Assembly-CSharp::Objects
   itemName: "voile d\xE9chir\xE9"
-  value: 1
+  value: 10
   prefab: {fileID: 6222769991005743406, guid: 706127f0cb72fd14aa18d8295ead320a, type: 3}
   index: 3

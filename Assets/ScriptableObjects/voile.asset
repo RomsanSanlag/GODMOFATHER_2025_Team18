@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: voile
   m_EditorClassIdentifier: Assembly-CSharp::Objects
   itemName: voile
-  value: 2
+  value: 20
   prefab: {fileID: 4959290229943882812, guid: 4f1c149efb106db45b277d927382e61b, type: 3}
   index: 5

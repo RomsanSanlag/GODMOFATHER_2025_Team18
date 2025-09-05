@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: "bou\xE9e"
   m_EditorClassIdentifier: Assembly-CSharp::Objects
   itemName: "bou\xE9e"
-  value: 1
+  value: 10
   prefab: {fileID: 7977409971657677525, guid: f2478f3472c991f44b182615d9664c75, type: 3}
   index: 2

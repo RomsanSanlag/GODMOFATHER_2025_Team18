@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: chaine
   m_EditorClassIdentifier: Assembly-CSharp::Objects
   itemName: chaine
-  value: -3
+  value: -30
   prefab: {fileID: 720562381412163215, guid: d342a32901d627e439326841862b57f8, type: 3}
   index: 6

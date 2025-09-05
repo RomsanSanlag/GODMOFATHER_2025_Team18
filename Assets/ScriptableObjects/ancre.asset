@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ancre
   m_EditorClassIdentifier: Assembly-CSharp::Objects
   itemName: ancre
-  value: -2
+  value: -20
   prefab: {fileID: 1182893615555289736, guid: a663d8a47e800b74baa247caccd7b51b, type: 3}
   index: 4

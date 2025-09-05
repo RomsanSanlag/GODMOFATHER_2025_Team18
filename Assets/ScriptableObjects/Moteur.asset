@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Moteur
   m_EditorClassIdentifier: Assembly-CSharp::Objects
   itemName: Moteur
-  value: 3
+  value: 30
   prefab: {fileID: 1835288667041217321, guid: 627ff5cba3dbd1e4c93bf4f441cc191f, type: 3}
   index: 1

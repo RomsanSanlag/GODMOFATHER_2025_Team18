@@ -4,6 +4,8 @@ using System.Collections;
 
 public class PaddleRace : MonoBehaviour
 {
+    public MainMenuFuncs MainMenuFuncs;
+    
     public Transform player1;
     public Transform player2;
 
@@ -12,6 +14,8 @@ public class PaddleRace : MonoBehaviour
 
     public float player1Distance = 5f;
     public float player2Distance = 7f;
+    
+    private int finishedCount = 0;
 
     public void Start()
     {
@@ -36,5 +40,18 @@ public class PaddleRace : MonoBehaviour
         }
 
         player.position = targetPos; // get final position
+        
+        finishedCount++;
+
+        if (finishedCount == 2) // ici 2 joueurs
+        {
+            OnRaceFinished();
+        }
+    }
+
+    private void OnRaceFinished()
+    {
+        MainMenuFuncs.ScoreScreen();
+        Debug.Log("course finished");
     }
 }

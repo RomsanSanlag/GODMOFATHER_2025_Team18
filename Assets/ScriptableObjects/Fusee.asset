@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Fusee
   m_EditorClassIdentifier: Assembly-CSharp::Objects
   itemName: Fusee
-  value: 5
+  value: 50
   prefab: {fileID: 8028058071636509318, guid: e1bf98f0722cbe04fb63ec62ca1113d5, type: 3}
   index: 0
