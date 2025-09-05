@@ -17,6 +17,7 @@ public class MainMenuFuncs : MonoBehaviour
     [SerializeField] GameObject _paddle2;
     
     public CameraFollow cameraFollow;
+    public SpawnObjects spawnObjects;
     
     
     [SerializeField] Button _buttonScreenShake;
@@ -90,5 +91,6 @@ public class MainMenuFuncs : MonoBehaviour
         _raceMenu.SetActive(true);
         
         cameraFollow.enabled = true;
+        spawnObjects.DestroyAllSpawned();
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.Serialization;
 public class SpawnObjects : MonoBehaviour
 {
     [SerializeField] Transform _center;
+    private List<GameObject> spawnedObjects = new List<GameObject>();
     
     [Header("Spawn Objects B Tier")]
     [SerializeField] List<GameObject> _BTierObjects;
@@ -79,7 +80,8 @@ public class SpawnObjects : MonoBehaviour
             _center.position.y + Mathf.Sin(angle) * _radiusS + Random.Range(-0.5f, 0.5f)
         );
         
-        Instantiate(prefab, pos, Quaternion.identity);
+        GameObject obj = Instantiate(prefab, pos, Quaternion.identity);
+        spawnedObjects.Add(obj);
     }
 
     private void SpawnObjectATier()
@@ -96,7 +98,8 @@ public class SpawnObjects : MonoBehaviour
             _center.position.y + Mathf.Sin(angle) * _radiusA + Random.Range(-0.5f, 0.5f)
         );
 
-        Instantiate(prefab, pos, Quaternion.identity);
+        GameObject obj = Instantiate(prefab, pos, Quaternion.identity);
+        spawnedObjects.Add(obj);
     }
 
     void SpawnObjectBTier()
@@ -113,6 +116,16 @@ public class SpawnObjects : MonoBehaviour
             _center.position.y + Mathf.Sin(angle) * _radiusB + Random.Range(-0.5f, 0.5f)
         );
         
-        Instantiate(prefab, pos, Quaternion.identity);
+        GameObject obj = Instantiate(prefab, pos, Quaternion.identity);
+        spawnedObjects.Add(obj);
+    }
+    
+    public void DestroyAllSpawned()
+    {
+        foreach (GameObject obj in spawnedObjects)
+        {
+            if (obj != null) Destroy(obj);
+        }
+        spawnedObjects.Clear();
     }
 }

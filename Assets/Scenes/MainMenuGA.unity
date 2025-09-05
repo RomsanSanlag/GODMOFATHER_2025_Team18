@@ -3100,7 +3100,8 @@ MonoBehaviour:
   _raceMenu: {fileID: 290938070}
   _paddle1: {fileID: 1491328527}
   _paddle2: {fileID: 279585760}
-  cameraFollow: {fileID: 0}
+  cameraFollow: {fileID: 650021887}
+  spawnObjects: {fileID: 1880500411}
   _buttonScreenShake: {fileID: 809373513}
 --- !u!1 &1157892251
 GameObject:
@@ -5047,6 +5048,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1880500411 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2754452163360013831, guid: 59e18c9e02746b54b800477ddb2bf2b1, type: 3}
+  m_PrefabInstance: {fileID: 646572263}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088c041ad7dfacd439150ea2e526f8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnObjects
 --- !u!1001 &1891772215
 PrefabInstance:
   m_ObjectHideFlags: 0
