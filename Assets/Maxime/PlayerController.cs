@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private Animator animator;
     [SerializeField] private float rotationOffset = 0f;
+    [SerializeField] private float rotationLerpSpeed = 720f;
 
     private int idBlend;
     private int idAnimMoveSpeed;
@@ -40,6 +41,8 @@ public class PlayerController : MonoBehaviour
     private Transform carriedOriginalParent;
     private Collider2D carriedCol;
     private Collider2D playerCol;
+    private PickupItem carriedItem;
+    private Objects carriedData;
 
     public float Cooldown01 => attackCooldown <= 0f ? 0f : Mathf.Clamp01((nextAttackTime - Time.time) / attackCooldown);
 
@@ -48,6 +51,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         baseMoveSpeed = moveSpeed;
         playerCol = GetComponent<Collider2D>();
+        if (playerCol == null) playerCol = GetComponentInChildren<Collider2D>();
         if (carryAnchor == null)
         {
             var go = new GameObject("CarryAnchor");
@@ -124,6 +128,8 @@ public class PlayerController : MonoBehaviour
         if (best == null) return;
 
         carriedRb = best;
+        carriedItem = best.GetComponent<PickupItem>();
+        carriedData = carriedItem != null ? carriedItem.data : null;
         carriedOriginalParent = carriedRb.transform.parent;
         carriedCol = carriedRb.GetComponent<Collider2D>();
         if (carriedCol != null && playerCol != null) Physics2D.IgnoreCollision(carriedCol, playerCol, true);
@@ -151,11 +157,12 @@ public class PlayerController : MonoBehaviour
 
         if (v.sqrMagnitude > 0.0001f)
         {
-            float angle = Vector2.SignedAngle(Vector2.up, v.normalized) + rotationOffset;
-            rb.MoveRotation(angle);
+            float targetAngle = Vector2.SignedAngle(Vector2.up, v.normalized) + rotationOffset;
+            float newAngle = Mathf.MoveTowardsAngle(rb.rotation, targetAngle, rotationLerpSpeed * Time.fixedDeltaTime);
+            rb.MoveRotation(newAngle);
         }
 
-        if (carryAnchor != null) carryAnchor.localPosition = (Vector3)(facing.normalized * 1.5f);
+        if (carryAnchor != null) carryAnchor.localPosition = transform.up * 1.5f;
 
         if (animator != null)
         {
@@ -202,11 +209,32 @@ public class PlayerController : MonoBehaviour
             if (carriedCol != null && playerCol != null) Physics2D.IgnoreCollision(carriedCol, playerCol, false);
         }
         carriedRb = null;
+        carriedItem = null;
+        carriedData = null;
         carriedCol = null;
         carriedOriginalParent = null;
         isCarrying = false;
         canAttack = true;
         moveSpeed = baseMoveSpeed;
         if (animator != null) animator.SetBool(idIsCarrying, false);
+    }
+
+    public bool DepositTo(PaddleStats stats)
+    {
+        if (!isCarrying) return false;
+        if (carriedData == null || stats == null) return false;
+        if (carriedCol != null && playerCol != null) Physics2D.IgnoreCollision(carriedCol, playerCol, false);
+        stats.ApplyItem(carriedData);
+        if (carriedRb != null) Object.Destroy(carriedRb.gameObject);
+        carriedRb = null;
+        carriedItem = null;
+        carriedData = null;
+        carriedCol = null;
+        carriedOriginalParent = null;
+        isCarrying = false;
+        canAttack = true;
+        moveSpeed = baseMoveSpeed;
+        if (animator != null) animator.SetBool(idIsCarrying, false);
+        return true;
     }
 }

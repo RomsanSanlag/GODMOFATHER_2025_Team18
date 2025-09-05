@@ -10,6 +10,15 @@ public class MainMenuFuncs : MonoBehaviour
     [SerializeField] GameObject _mainMenu;
     [SerializeField] GameObject _settingsMenu;
     [SerializeField] GameObject _gameMenu;
+    [SerializeField] GameObject _scoreMenu;
+    [SerializeField] GameObject _raceMenu;
+    
+    [SerializeField] GameObject _paddle1;
+    [SerializeField] GameObject _paddle2;
+    
+    public CameraFollow cameraFollow;
+    public SpawnObjects spawnObjects;
+    public Score score;
     
     
     [SerializeField] Button _buttonScreenShake;
@@ -20,6 +29,9 @@ public class MainMenuFuncs : MonoBehaviour
         _mainMenu.SetActive(false);
         _settingsMenu.SetActive(false);
         _gameMenu.SetActive(true);
+        
+        _paddle1.SetActive(true);
+        _paddle2.SetActive(true);
     }
 
     public void QuitGame()
@@ -56,5 +68,32 @@ public class MainMenuFuncs : MonoBehaviour
         {
             _buttonScreenShake.image.color = Color.red;
         }
+    }
+
+    public void ScoreScreen()
+    {
+        _mainMenu.SetActive(false);
+        _settingsMenu.SetActive(false);
+        _gameMenu.SetActive(false);
+        _scoreMenu.SetActive(true);
+        
+        _paddle1.SetActive(false);
+        _paddle2.SetActive(false);
+        
+        score.printScore();
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("MainMenuGA");
+    }
+
+    public void StartRace()
+    {
+        _gameMenu.SetActive(false);
+        _raceMenu.SetActive(true);
+        
+        cameraFollow.enabled = true;
+        spawnObjects.DestroyAllSpawned();
     }
 }

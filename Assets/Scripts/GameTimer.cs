@@ -3,11 +3,13 @@ using TMPro;
 
 public class GameTimer : MonoBehaviour
 {
-    public float gameDuration = 30f; // duration in sec
+    public float gameDuration = 60f; // duration in sec
     private float timeRemaining;
     private bool isRunning = false;
 
     public TextMeshProUGUI timerText;
+    
+    public MainMenuFuncs mainMenuFuncs;
 
     void Update()
     {
@@ -41,5 +43,6 @@ public class GameTimer : MonoBehaviour
     void EndGame()
     {
         Debug.Log("OVER");
+        mainMenuFuncs.StartRace();
     }
 }
