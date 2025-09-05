@@ -351,7 +351,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2373584901244391233, guid: 347f8d2be9032ac47956b99252d32d5f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.8000001
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2373584901244391233, guid: 347f8d2be9032ac47956b99252d32d5f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2373584901244391233, guid: 347f8d2be9032ac47956b99252d32d5f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1376,6 +1380,7 @@ Transform:
   - {fileID: 49695891}
   - {fileID: 304466634}
   - {fileID: 44769441}
+  - {fileID: 4666305655989634976}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &290938072
@@ -2920,15 +2925,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2754452163360013831, guid: 59e18c9e02746b54b800477ddb2bf2b1, type: 3}
       propertyPath: _spawnIntervalATier
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2754452163360013831, guid: 59e18c9e02746b54b800477ddb2bf2b1, type: 3}
       propertyPath: _spawnIntervalBTier
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2754452163360013831, guid: 59e18c9e02746b54b800477ddb2bf2b1, type: 3}
       propertyPath: _spawnIntervalSTier
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2754452163360013831, guid: 59e18c9e02746b54b800477ddb2bf2b1, type: 3}
       propertyPath: _ATierObjects.Array.size
@@ -6804,7 +6809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7442a8730aa6f4dbbf50ac38feb6fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameTimer
-  gameDuration: 10
+  gameDuration: 60
   timerText: {fileID: 2115929081}
   mainMenuFuncs: {fileID: 1146183105}
 --- !u!1 &1623491809
@@ -7093,7 +7098,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6751761116194304121, guid: b1db4619d0c51c24697822904bc6ad95, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8904081921355893239, guid: b1db4619d0c51c24697822904bc6ad95, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9121,7 +9126,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 290938071}
     m_Modifications:
     - target: {fileID: 196231046592101093, guid: c320c7b1ac6b4ae4da5644a33cb135a1, type: 3}
       propertyPath: m_Name
@@ -9177,23 +9182,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3672371880435130234, guid: c320c7b1ac6b4ae4da5644a33cb135a1, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3672371880435130234, guid: c320c7b1ac6b4ae4da5644a33cb135a1, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3672371880435130234, guid: c320c7b1ac6b4ae4da5644a33cb135a1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3672371880435130234, guid: c320c7b1ac6b4ae4da5644a33cb135a1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 56
+      value: 57.26352
       objectReference: {fileID: 0}
     - target: {fileID: 3672371880435130234, guid: c320c7b1ac6b4ae4da5644a33cb135a1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.1488
       objectReference: {fileID: 0}
     - target: {fileID: 3672371880435130234, guid: c320c7b1ac6b4ae4da5644a33cb135a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9275,4 +9280,3 @@ SceneRoots:
   - {fileID: 1157892253}
   - {fileID: 1337271905}
   - {fileID: 1891772215}
-  - {fileID: 4666305655989634975}
