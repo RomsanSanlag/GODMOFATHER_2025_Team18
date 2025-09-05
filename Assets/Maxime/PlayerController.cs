@@ -21,6 +21,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotationOffset = 0f;
     [SerializeField] private float rotationLerpSpeed = 720f;
 
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource footstepSource;
+    [SerializeField] private AudioClip footstepClip;
+    [SerializeField] private AudioClip pickupClip;
+    [SerializeField] private AudioClip dropClipA;
+    [SerializeField] private AudioClip dropClipB;
+    [SerializeField] private AudioClip attackClip;
+
     private int idBlend;
     private int idAnimMoveSpeed;
     private int idIsCarrying;
@@ -72,6 +80,8 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat(idBlend, 0f);
             animator.SetFloat(idAnimMoveSpeed, 0f);
         }
+        if (footstepSource != null) footstepSource.loop = true;
+        if (footstepSource != null && footstepClip != null) footstepSource.clip = footstepClip;
     }
 
     void OnMove(InputValue value)
@@ -88,6 +98,7 @@ public class PlayerController : MonoBehaviour
         if (Time.time < nextAttackTime) return;
         nextAttackTime = Time.time + attackCooldown;
         if (animator != null) animator.SetTrigger(idIsHitting);
+        if (sfxSource != null && attackClip != null) sfxSource.PlayOneShot(attackClip);
 
         Vector2 origin = rb.position + facing * attackRange;
         var hits = Physics2D.OverlapCircleAll(origin, attackRadius, hittableMask);
@@ -139,6 +150,7 @@ public class PlayerController : MonoBehaviour
         isCarrying = true;
         canAttack = false;
         moveSpeed = baseMoveSpeed * carrySpeedMultiplier;
+        if (sfxSource != null && pickupClip != null) sfxSource.PlayOneShot(pickupClip);
 
         if (animator != null)
         {
@@ -188,6 +200,19 @@ public class PlayerController : MonoBehaviour
                 animator.SetFloat(idBlend, speed);
             }
         }
+
+        bool shouldFootstep = speed > 0.05f && canMove && !isStunned;
+        if (footstepSource != null)
+        {
+            if (shouldFootstep)
+            {
+                if (!footstepSource.isPlaying && footstepClip != null) footstepSource.Play();
+            }
+            else
+            {
+                if (footstepSource.isPlaying) footstepSource.Stop();
+            }
+        }
     }
 
     public void SetStun(bool value)
@@ -208,6 +233,11 @@ public class PlayerController : MonoBehaviour
             carriedRb.simulated = true;
             if (carriedCol != null && playerCol != null) Physics2D.IgnoreCollision(carriedCol, playerCol, false);
         }
+        if (sfxSource != null)
+        {
+            if (dropClipA != null) sfxSource.PlayOneShot(dropClipA);
+            if (dropClipB != null) sfxSource.PlayOneShot(dropClipB);
+        }
         carriedRb = null;
         carriedItem = null;
         carriedData = null;
@@ -225,6 +255,11 @@ public class PlayerController : MonoBehaviour
         if (carriedData == null || stats == null) return false;
         if (carriedCol != null && playerCol != null) Physics2D.IgnoreCollision(carriedCol, playerCol, false);
         stats.ApplyItem(carriedData);
+        if (sfxSource != null)
+        {
+            if (dropClipA != null) sfxSource.PlayOneShot(dropClipA);
+            if (dropClipB != null) sfxSource.PlayOneShot(dropClipB);
+        }
         if (carriedRb != null) Object.Destroy(carriedRb.gameObject);
         carriedRb = null;
         carriedItem = null;
