@@ -95,5 +95,11 @@ public class MainMenuFuncs : MonoBehaviour
         
         cameraFollow.enabled = true;
         spawnObjects.DestroyAllSpawned();
+        
+        Transform child = _paddle1.transform.GetChild(0);
+        child.gameObject.SetActive(true);
+        
+        Transform child2 = _paddle2.transform.GetChild(0);
+        child.gameObject.SetActive(true);
     }
 }
