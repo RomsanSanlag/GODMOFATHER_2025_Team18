@@ -225,9 +225,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 284
-        y: 850
-        width: 235
-        height: 142
+        y: 846
+        width: 237
+        height: 152
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -466,10 +466,10 @@ TextureImporter:
       name: char 2_15
       rect:
         serializedVersion: 2
-        x: 1159
-        y: 99
-        width: 220
-        height: 144
+        x: 1148
+        y: 97
+        width: 238
+        height: 154
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
