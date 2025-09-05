@@ -550,6 +550,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moteur_mouvement
       objectReference: {fileID: 0}
+    - target: {fileID: 1835288667041217321, guid: 627ff5cba3dbd1e4c93bf4f441cc191f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1993006553800943351, guid: 627ff5cba3dbd1e4c93bf4f441cc191f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.01
